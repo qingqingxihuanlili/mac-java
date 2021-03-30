@@ -22,8 +22,9 @@ public class MergeLinked {
         Node node4 = new Node(4);
         Node node5 = new Node(5);
 
-        node1.append(node3).append(node4);  // node1 : 1->3->4
-        node2.append(node4).append(node5);  // node2 : 1->4->5
+        node1.next =node3;// node1 : 1->3->5
+        node1.next.next = node5;// node1 : 1->3->4
+        node2.append(node3).append(node4);  // node2 : 1->4->5
 
         // 递归合并链表
         Node result = mergeLinked(node1,node2);
@@ -46,6 +47,7 @@ public class MergeLinked {
         }
 
         Node result = new Node(0);
+
 
         // 循环结束条件，一个链表走到头了
         while (node1 != null && node2 != null){
