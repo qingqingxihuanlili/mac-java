@@ -31,31 +31,50 @@ public class MergeLinked {
     }
 
     /*
-     *
+     *  做一条新链表，遍历node1和node2两个链表，小的排前面，并且拥有小的链表往下走，然后接着比，直到
+     * 一个链表走到头，之后把另外的那个没走完的链表附加到新链表的尾巴上
      */
     private static Node mergeLinked(Node node1, Node node2) {
 
-        if (node1 == null)
+        // 如果node1，node2有一条是空的，直接返回另外一条
+        if (node1 == null) {
             return node2;
+        }
 
-        if (node2 == null)
+        if (node2 == null) {
             return node1;
+        }
 
-        Node head = null;
+        Node result = new Node(0);
 
-        if (node1.getData() <= node2.getData()){
+        // 循环结束条件，一个链表走到头了
+        while (node1 != null && node2 != null){
 
-            head = node1;
-            head.next = mergeLinked(node1.next, node2);
+            if (node1.getData() <= node2.getData()) {
 
-        } else {
+                result.next = node1;
+                node1 = node1.next;
 
-            head = node2;
-            head.next = mergeLinked(node1, node2.next);
+            }else {
+
+                result.next = node2;
+                node2 = node2.next;
+
+            }
+
+            result = result.next;
 
         }
 
-        return head;
+        // 判断出没走完的链表，将其添加到新链表到尾巴上面
+        if (node1 == null) {
+            result.next = node2;
+        }
 
+        if (node2 == null) {
+            result.next = node1;
+        }
+
+        return result.next;
     }
 }
