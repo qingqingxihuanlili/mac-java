@@ -1,4 +1,4 @@
-package demo.java20200330;
+package src.demo.java20200330;
 
 import demo.linked.Node;
 
@@ -21,10 +21,11 @@ public class MergeLinked {
         Node node3 = new Node(3);
         Node node4 = new Node(4);
         Node node5 = new Node(5);
+        Node node6 = new Node(6);
 
-        node1.next =node3;// node1 : 1->3->5
-        node1.next.next = node5;// node1 : 1->3->4
-        node2.append(node3).append(node4);  // node2 : 1->4->5
+        node1.append(node3);
+        node1.append(node6);   // node1 : 1->3->6
+        node2.append(node4).append(node6);  // node2 : 1->4->6
 
         // 递归合并链表
         Node result = mergeLinked(node1,node2);
@@ -47,23 +48,31 @@ public class MergeLinked {
         }
 
         Node result = new Node(0);
+        Node nodeResult = result;
 
 
         // 循环结束条件，一个链表走到头了
         while (node1 != null && node2 != null){
 
+            //临时变量用于存储临时节点！！！！！！为什么呢因为next是null的好赋值
+            Node temp = new Node(0);
+
             if (node1.getData() <= node2.getData()) {
 
-                result.next = node1;
+                //将小的值赋给临时节点
+                temp.setData(node1.getData());
+                //较小的链表指针往下移
                 node1 = node1.next;
 
             }else {
 
-                result.next = node2;
+                temp.setData(node2.getData());
                 node2 = node2.next;
 
             }
 
+            // 将临时节点赋值给结果集，结果集往下走等待下一轮赋值
+            result.next = temp;
             result = result.next;
 
         }
@@ -77,6 +86,7 @@ public class MergeLinked {
             result.next = node1;
         }
 
-        return result.next;
+        // 因为result第一位是无效位
+        return nodeResult.next;
     }
 }
