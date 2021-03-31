@@ -1,6 +1,6 @@
-package demo.test.testnode;
+package src.demo.test.testnode;
 
-import demo.linked.Node;
+import src.demo.linked.Node;
 
 public class TestNode {
 

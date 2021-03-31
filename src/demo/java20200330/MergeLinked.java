@@ -1,6 +1,6 @@
 package src.demo.java20200330;
 
-import demo.linked.Node;
+import src.demo.linked.Node;
 
 /**
  * 功能描述:【部件码-适用环境-功能模块】

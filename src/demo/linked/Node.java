@@ -1,4 +1,4 @@
-package demo.linked;
+package src.demo.linked;
 
 // 节点
 public class Node {
