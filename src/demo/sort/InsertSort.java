@@ -1,13 +1,15 @@
-package demo.sort;
+package src.demo.sort;
 
 import java.util.Arrays;
 
 public class InsertSort {
 
     public static void main(String[] args) {
+
         int[] arr = new int[]{5,8,9,6,4,5,2,3,10,52,14,36,48,100,2,7};
         insertSort(arr);
         System.out.println(Arrays.toString(arr));
+
     }
 
     private static void insertSort(int[] arr) {
@@ -34,7 +36,7 @@ public class InsertSort {
                     arr[j+1] = arr[j];
                 }
                 // 直到找到了这个位置，即前面的都小于，后面的都大于，然后插入
-                // 为什么是j+1,因为是插入嘛, j是哪个小于temp的值，j+1是那个大于temp的值已经被移到j+1+1了
+                // 为什么是j+1,因为是插入嘛, j是哪个小于temp的值，j+1是那个大于temp的值已经被移到j+1+1了，既j又减了一次
                 // 所以j+1空给了temp
                 arr[j+1] = temp;
             }

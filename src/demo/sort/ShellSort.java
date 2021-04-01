@@ -1,10 +1,11 @@
-package demo.sort;
+package src.demo.sort;
 
 import java.util.Arrays;
 
 public class ShellSort {
 
     public static void main(String[] args) {
+
         int[] arr = new int[]{5,8,9,6,4,5,2,3,10,52,14,36,48,100,2,7,99,51,18,36};
         shellSort(arr);
         System.out.println(Arrays.toString(arr));

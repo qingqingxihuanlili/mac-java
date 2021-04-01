@@ -1,10 +1,11 @@
-package demo.sort;
+package src.demo.sort;
 
 import java.util.Arrays;
 
 public class QuickSort {
 
     public static void main(String[] args) {
+
         int[] arr = new int[]{5,8,9,6,4,5,2,3,10,52,14,36,48,100,2,7};
         quickSort(arr,0,arr.length-1);
         System.out.println(Arrays.toString(arr));
@@ -16,6 +17,7 @@ public class QuickSort {
          *   递归结束条件：参数传入的起始位置大于结束位置，证明已经全部排序完成
          * */
         if (start < end){
+
             // 定义基准位置，用于比较，把比它大的放后面，比它小的放前面.通常要排序的第一个位置
             int standard = arr[start];
 

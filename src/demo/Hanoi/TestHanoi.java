@@ -1,4 +1,4 @@
-package demo.Hanoi;
+package src.demo.Hanoi;
 
 public class TestHanoi {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package demo.Fibonacci;
+package src.demo.Fibonacci;
 
 public class TestFibonacci {
     public static void main(String[] args) {

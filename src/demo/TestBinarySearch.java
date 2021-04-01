@@ -1,4 +1,4 @@
-package demo;
+package src.demo;
 
 public class TestBinarySearch {
 
